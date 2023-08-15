@@ -9,3 +9,16 @@ This repository was created and continually updated while I was learning SQL fun
 * MySQL
 
 The challenges below chronicle my ongoing SQL practice:
+
+<table style="text-align:center">
+    <tr>
+        <th>At A Glance</th>
+        <th>Repo Link 🔗</th>
+        <th>What I Practiced / Used</th>
+    </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-Python/blob/main/Monty_Hall_Problem/monty_hall_problem.html">PLACEHOLDER</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-Python/tree/main/Monty_Hall_Problem">🔗</a></td>
+        <td>PLACEHOLDER</td>
+    </tr>
+</table>
