@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>User's Third Transaction</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>User's Third Transaction</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/sql-third-transaction">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-4 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Assume you are given the table below on Uber transactions made by users.  Write a query to obtain
+                        the third transaction of every user. Output the user id, spend and transaction date.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="300">
+                </div>
+                <div class="col-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Derive a column that has the rank of a given
+transaction for a specific user, then filter rows by
+transactions that are ranked third.
+*/
+
+WITH transactions_ranked AS (
+    SELECT *,
+    RANK() OVER (PARTITION BY user_id ORDER BY transaction_date)
+    AS transaction_number
+    FROM transactions
+)
+SELECT user_id, spend, transaction_date
+FROM transactions_ranked
+WHERE transaction_number = 3;
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    </body>
+</html>
