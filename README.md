@@ -17,8 +17,8 @@ The challenges below chronicle my ongoing SQL practice:
         <th>What I Practiced / Used</th>
     </tr>
     <tr>
-        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-Python/blob/main/Monty_Hall_Problem/monty_hall_problem.html">PLACEHOLDER</a></td>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-Python/blob/main/Monty_Hall_Problem/monty_hall_problem.html">User's Third Transaction</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-Python/tree/main/Monty_Hall_Problem">🔗</a></td>
-        <td>PLACEHOLDER</td>
+        <td>common table expression (CTEs), RANK() window function
     </tr>
 </table>
