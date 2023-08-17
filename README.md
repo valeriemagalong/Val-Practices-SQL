@@ -19,11 +19,16 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Users_Third_Transaction/users_third_transaction_summary.html">User's Third Transaction</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Users_Third_Transaction">🔗</a></td>
-        <td>common table expression (CTEs), RANK() window function
+        <td>common table expression (CTEs), RANK() window function</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Sending_Opening_Snaps/sending_opening_snaps.html">Sending vs. Opening Snaps</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Sending_Opening_Snaps">🔗</a></td>
-        <td>inner join, conditional aggregation, multiple CTEs
+        <td>inner join, conditional aggregation, multiple CTEs</td>
+    </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Tweets_Rolling_Averages/tweets_rolling_averages_summary.html">Tweets' Rolling Averages</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Tweets_Rolling_Averages">🔗</a></td>
+        <td>AVG() window function, window function frame specification (ROWS clause)</td>
     </tr>
 </table>
