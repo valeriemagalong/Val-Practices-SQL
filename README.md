@@ -22,7 +22,7 @@ The challenges below chronicle my ongoing SQL practice:
         <td>common table expression (CTEs), RANK() window function</td>
     </tr>
     <tr>
-        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Sending_Opening_Snaps/sending_opening_snaps.html">Sending vs. Opening Snaps</a></td>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Sending_Opening_Snaps/sending_opening_snaps_summary.html">Sending vs. Opening Snaps</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Sending_Opening_Snaps">🔗</a></td>
         <td>inner join, conditional aggregation, multiple CTEs</td>
     </tr>
