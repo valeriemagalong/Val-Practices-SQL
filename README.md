@@ -21,4 +21,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Users_Third_Transaction">🔗</a></td>
         <td>common table expression (CTEs), RANK() window function
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Sending_Opening_Snaps/sending_opening_snaps.html">Sending vs. Opening Snaps</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Sending_Opening_Snaps">🔗</a></td>
+        <td>inner join, conditional aggregation, multiple CTEs
+    </tr>
 </table>
