@@ -26,7 +26,7 @@ Database: PostgreSQL
 -- by song count.  Wrap this query in a CTE, and output the top 5 artists.
 
 WITH top_artists AS (
-  SELECT a.artist_name, COUNT(gsr.song_id) as total_songs,
+  SELECT a.artist_name, COUNT(gsr.song_id) AS total_songs,
     DENSE_RANK() OVER(
       ORDER BY COUNT(gsr.song_id) DESC
     ) AS artist_rank
