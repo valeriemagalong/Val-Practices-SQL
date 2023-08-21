@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Highest-Grossing Items</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Highest-Grossing Items</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/sql-highest-grossing">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Assume you're given a table containing data on Amazon customers and their spending on products in different category, write a query to identify the top two highest-grossing products within each category in the year 2022. The output should include the category, product, and total spend.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+/*
+My strategy: Create a CTE where data is filtered by year (2022),
+grouped by category and product, aggregated by total spent, and
+ranked by total spent (descending) within a category. Then filter
+the CTE by the top two products in each category.
+*/
+
+WITH spend_totals_ranked AS (
+  SELECT category, product, SUM(spend) AS total_spend,
+    DENSE_RANK() OVER (
+        PARTITION BY category
+        ORDER BY SUM(spend) DESC
+      ) AS spend_rank
+  FROM product_spend
+  WHERE EXTRACT(YEAR FROM transaction_date) = 2022
+  GROUP BY category, product
+)
+SELECT category, product, total_spend
+FROM spend_totals_ranked
+WHERE spend_rank IN (1, 2);
+
+/*
+Note: I chose to use DENSE_RANK so rank 2 is not skipped,
+in case of ties.
+*/
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
