@@ -31,4 +31,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Tweets_Rolling_Averages">🔗</a></td>
         <td>AVG() window function, window function frame specification (ROWS clause)</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Highest_Grossing_Items/highest_grossing_items_summary.html">Highest-Grossing Items</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Highest_Grossing_Items">🔗</a></td>
+        <td>DENSE_RANK() window function, CTEs, datetime filtering using EXTRACT()</td>
+    </tr>
 </table>
