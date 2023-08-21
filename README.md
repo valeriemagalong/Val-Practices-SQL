@@ -36,4 +36,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Highest_Grossing_Items">🔗</a></td>
         <td>DENSE_RANK() window function, CTEs, datetime filtering using EXTRACT()</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Top_5_Artists/top_5_artists_summary.html">Top 5 Artists</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Top_5_Artists">🔗</a></td>
+        <td>inner joins, filtering values within a range (BETWEEN operator), DENSE_RANK() window function, CTEs</td>
+    </tr>
 </table>
