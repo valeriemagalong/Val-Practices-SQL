@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Top 5 Artists</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Top 5 Artists</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/top-fans-rank">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Assume there are three Spotify tables: artists, songs, and global_song_rank, which contain information about the artists, songs, and music charts, respectively.</p>
+                    <p class="text-secondary">Write a query to find the top 5 artists whose songs appear most frequently in the Top 10 of the global_song_rank table. Display the top 5 artist names in ascending order, along with their song appearance ranking.</p>
+                    <p class="text-secondary">Assumptions:
+                        <ul class="text-secondary">
+                            <li>If two or more artists have the same number of song appearances, they should be assigned the same ranking, and the rank numbers should be continuous (i.e. 1, 2, 2, 3, 4, 5).</li>
+                            <li>For instance, if both Ed Sheeran and Bad Bunny appear in the Top 10 five times, they should both be ranked 1st and the next artist should be ranked 2nd.</li>
+                        </ul>
+                    </p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="300">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+/*
+My strategy: Join the artists, songs, and global_song_rank tables,
+filtering by rows with a rank of 1 through 10, grouping by artist,
+aggregating by song count, and using DENSE_RANK to get the artist
+rank by song count.  Wrap this query in a CTE, and output the top
+5 artists.
+*/
+
+WITH top_artists AS (
+  SELECT a.artist_name, COUNT(gsr.song_id) AS total_songs,
+    DENSE_RANK() OVER(
+      ORDER BY COUNT(gsr.song_id) DESC
+    ) AS artist_rank
+  FROM artists a
+  JOIN songs s ON a.artist_id = s.artist_id
+  JOIN global_song_rank gsr ON s.song_id = gsr.song_id
+  WHERE gsr.rank BETWEEN 1 AND 10
+  GROUP BY a.artist_name
+)
+SELECT artist_name, artist_rank
+FROM top_artists
+WHERE artist_rank BETWEEN 1 AND 5;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
