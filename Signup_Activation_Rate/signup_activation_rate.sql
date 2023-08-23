@@ -43,7 +43,7 @@ FROM all_confirmed;
 SELECT ROUND(
   CAST(COUNT(t.signup_action) AS DECIMAL) / COUNT(DISTINCT e.user_id),
   2
-) AS activation_rate
+) AS confirm_rate
 FROM emails e
 LEFT JOIN texts t ON e.email_id = t.email_id
   AND t.signup_action = 'Confirmed';

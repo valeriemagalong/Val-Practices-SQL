@@ -11,14 +11,27 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-12 text-center mt-4">
-                    <h1>Tweets' Rolling Averages</h1>
-                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/rolling-average-tweets">DataLemur.com</a>.
+                    <h1>Signup Activation Rate</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/signup-confirmation-rate">DataLemur.com</a>.
                         <br>Database: PostgreSQL
                     </p>
                 </div>
                 <div class="col-lg-5 my-4">
                     <h4>Question</h4>
-                    <p class="text-secondary">Given a table of tweet data over a specified time period, calculate the 3-day rolling average of tweets for each user. Output the user ID, tweet date, and rolling averages rounded to 2 decimal places.</p>
+                    <p class="text-secondary">New TikTok users sign up with their emails. They confirmed their signup by replying to the text confirmation to activate their accounts. Users may receive multiple text messages for account confirmation until they have confirmed their new account.</p>
+                    <p class="text-secondary">A senior analyst is interested to know the activation rate of specified users in the emails table. Write a query to find the activation rate. Round the percentage to 2 decimal places.</p>
+                    <p class="text-secondary">Definitions:
+                        <ul class="text-secondary">
+                            <li>emails table contain the information of user signup details.</li>
+                            <li>texts table contains the users' activation information.</li>
+                        </ul>
+                    </p>
+                    <p class="text-secondary">Assumptions:
+                        <ul class="text-secondary">
+                            <li>The analyst is interested in the activation rate of specific users in the emails table, which may not include all users that could potentially be found in the texts table.</li>
+                            <li>For example, user 123 in the emails table may not be in the texts table and vice versa.</li>
+                        </ul>
+                    </p>
                     <img src="tables.png" class="img-fluid" alt="Database table examples" width="300">
                 </div>
                 <div class="col-lg-7 my-4">
@@ -26,22 +39,44 @@
                     <pre class="prettyprint rounded shadow" style="padding: 30px;">
 
 /*
-My strategy: Per Twitter user, for each row of data (i.e. a
-tweet date), calculate the average tweet count for the row and
-its preceding two rows (current day and two days before).
-
-Window function syntax to remember: ROWS clause can be using
-to specify the rows that the window function acts over (i.e.
-ROWS BETWEEN lower AND upper bound).
+My strategy: Activation rate is the number of users that confirmed
+divided by total users.  Create a CTE for total users from the
+emails table.  Create a CTE for number of confirmed users from the
+texts table.  Finally, derive activation rate from these two CTEs.
 */
 
-SELECT user_id, tweet_date,
-  ROUND(AVG(tweet_count) OVER (
-    PARTITION BY user_id
-    ORDER BY tweet_date
-    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
-    ), 2) AS rolling_avg_3d
-FROM tweets;
+WITH all_users AS (
+  SELECT COUNT(user_id) AS total_users
+  FROM emails
+),
+all_confirmed AS (
+  SELECT email_id, COUNT(*) AS num_confirms
+  FROM texts
+  WHERE signup_action = 'Confirmed'
+  GROUP BY email_id
+)
+SELECT ROUND(SUM(num_confirms) / (SELECT total_users FROM all_users),
+    2
+) AS confirm_rate
+FROM all_confirmed;
+
+/*
+Alternative strategy: Since the emails table contains all users,
+left join emails with texts, filtering texts by only confirmed
+activations.  Then, derive activation rate by dividing number of
+confirmed users by total users.  Cast one of the numbers in the
+derivation as a decimal, since dividing an integer by an integer
+results in an integer, and we want to retain the fraction that
+results from the division.
+*/
+
+SELECT ROUND(
+  CAST(COUNT(t.signup_action) AS DECIMAL) / COUNT(DISTINCT e.user_id),
+  2
+) AS confirm_rate
+FROM emails e
+LEFT JOIN texts t ON e.email_id = t.email_id
+  AND t.signup_action = 'Confirmed';
 
                     </pre>
                 </div>
