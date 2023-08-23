@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Signup Activation Rate</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Tweets' Rolling Averages</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/rolling-average-tweets">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Given a table of tweet data over a specified time period, calculate the 3-day rolling average of tweets for each user. Output the user ID, tweet date, and rolling averages rounded to 2 decimal places.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="300">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Per Twitter user, for each row of data (i.e. a
+tweet date), calculate the average tweet count for the row and
+its preceding two rows (current day and two days before).
+
+Window function syntax to remember: ROWS clause can be using
+to specify the rows that the window function acts over (i.e.
+ROWS BETWEEN lower AND upper bound).
+*/
+
+SELECT user_id, tweet_date,
+  ROUND(AVG(tweet_count) OVER (
+    PARTITION BY user_id
+    ORDER BY tweet_date
+    ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+    ), 2) AS rolling_avg_3d
+FROM tweets;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
