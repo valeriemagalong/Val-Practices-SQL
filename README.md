@@ -46,4 +46,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Signup_Activation_Rate">🔗</a></td>
         <td>multiple CTEs, left join with conditional filtering, ROUND() with casting</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Supercloud_Customer/supercloud_customer_summary.html">Supercloud Customer</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Supercloud_Customer">🔗</a></td>
+        <td>inner join, query number of unique values (COUNT(DISTINCT)), CTEs, subqueries</td>
+    </tr>
 </table>
