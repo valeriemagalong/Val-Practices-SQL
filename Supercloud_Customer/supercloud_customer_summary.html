@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Supercloud Customer</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Supercloud Customer</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/supercloud-customer">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">A Microsoft Azure Supercloud customer is defined as a company that purchases at least one product from each product category.</p>
+                    <p class="text-secondary">Write a query that effectively identifies the company ID of such Supercloud customers.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="300">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Create a CTE, joining customer_contracts with products.
+Group by customer, aggregating by the count of the unique product
+categories where purchases were made.  Then, query only the
+customers that have a total category count equal to the total
+number of product categories (i.e. customers who made purchases
+in all product categories).
+*/
+
+WITH category_counts AS (
+  SELECT cc.customer_id,
+    COUNT(DISTINCT p.product_category) AS total_categories
+  FROM customer_contracts cc
+  JOIN products p ON cc.product_id = p.product_id
+  GROUP BY cc.customer_id
+)
+SELECT customer_id
+FROM category_counts
+WHERE total_categories = (
+  SELECT COUNT(DISTINCT product_category)
+  FROM products
+);
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
