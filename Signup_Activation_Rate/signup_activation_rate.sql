@@ -32,3 +32,18 @@ all_confirmed AS (
 SELECT ROUND(SUM(num_confirms) / (SELECT total_users FROM all_users), 2)
   AS confirm_rate
 FROM all_confirmed;
+
+-- Alternative strategy: Since the emails table contains all users, left join
+-- emails with texts, filtering texts by only confirmed activations.  Then,
+-- derive activation rate by dividing number of confirmed users by total users.
+-- Cast one of the numbers in the derivation as a decimal, since dividing an
+-- integer by an integer results in an integer, and we want to retain the
+-- fraction that results from the division.
+
+SELECT ROUND(
+  CAST(COUNT(t.signup_action) AS DECIMAL) / COUNT(DISTINCT e.user_id),
+  2
+) AS activation_rate
+FROM emails e
+LEFT JOIN texts t ON e.email_id = t.email_id
+  AND t.signup_action = 'Confirmed';
