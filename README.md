@@ -41,4 +41,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Top_5_Artists">🔗</a></td>
         <td>inner joins, filtering values within a range (BETWEEN operator), DENSE_RANK() window function, CTEs</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Signup_Activation_Rate/signup_activation_rate_summary.html">Signup Activation Rate</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Signup_Activation_Rate">🔗</a></td>
+        <td>multiple CTEs, left join with conditional filtering, ROUND() with casting</td>
+    </tr>
 </table>
