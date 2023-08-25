@@ -24,7 +24,7 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Sending_Opening_Snaps/sending_opening_snaps_summary.html">Sending vs. Opening Snaps</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Sending_Opening_Snaps">🔗</a></td>
-        <td>inner join, conditional aggregation, multiple CTEs</td>
+        <td>inner join, conditional aggregation (CASE statement), multiple CTEs</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Tweets_Rolling_Averages/tweets_rolling_averages_summary.html">Tweets' Rolling Averages</a></td>
@@ -50,5 +50,10 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Supercloud_Customer/supercloud_customer_summary.html">Supercloud Customer</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Supercloud_Customer">🔗</a></td>
         <td>inner join, query number of unique values (COUNT(DISTINCT)), CTEs, subqueries</td>
+    </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Odd_Even_Measurements/odd_even_measurements_summary.html">Odd and Even Measurements</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Odd_Even_Measurements">🔗</a></td>
+        <td>ROW_NUMBER() window function, CTEs, conditional aggregation (FILTER clause), datetime casting</td>
     </tr>
 </table>
