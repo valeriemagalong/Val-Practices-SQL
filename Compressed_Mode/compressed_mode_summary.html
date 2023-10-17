@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Compressed Mode</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Compressed Mode</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/alibaba-compressed-mode">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">You're given a table containing the item count for each order on Alibaba, along with the frequency of orders that have the same item count. Write a query to retrieve the mode of the order occurrences. Additionally, if there are multiple item counts with the same mode, the results should be sorted in ascending order.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Query the item count(s) (can be more than one row in
+case of a tie) with the maximum number of order occurrences
+(i.e. the mode).  Filter based on a subquery that returns the max
+of order_occurrences.  Order item counts in ascending order.
+*/
+
+SELECT item_count AS mode
+FROM items_per_order
+WHERE order_occurrences = (
+  SELECT MAX(order_occurrences)
+  FROM items_per_order
+)
+ORDER BY item_count;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
