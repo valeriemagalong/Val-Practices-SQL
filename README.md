@@ -61,4 +61,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Histogram_Users_Purchases">🔗</a></td>
         <td>common table expression (CTE), RANK() window function</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Compressed_Mode/compressed_mode_summary.html">Compressed Mode</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Compressed_Mode">🔗</a></td>
+        <td>subquery in WHERE clause (filtering by MAX() aggregate function)</td>
+    </tr>
 </table>
