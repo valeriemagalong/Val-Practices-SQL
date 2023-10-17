@@ -64,6 +64,6 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Compressed_Mode/compressed_mode_summary.html">Compressed Mode</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Compressed_Mode">🔗</a></td>
-        <td>subquery in WHERE clause (filtering by MAX() aggregate function)</td>
+        <td>subquery in WHERE clause (filtering by MAX())</td>
     </tr>
 </table>
