@@ -19,7 +19,7 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Users_Third_Transaction/users_third_transaction_summary.html">User's Third Transaction</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Users_Third_Transaction">🔗</a></td>
-        <td>common table expression (CTEs), RANK() window function</td>
+        <td>common table expression (CTE), RANK() window function</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Sending_Opening_Snaps/sending_opening_snaps_summary.html">Sending vs. Opening Snaps</a></td>
@@ -55,5 +55,10 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Odd_Even_Measurements/odd_even_measurements_summary.html">Odd and Even Measurements</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Odd_Even_Measurements">🔗</a></td>
         <td>ROW_NUMBER() window function, CTEs, conditional aggregation (FILTER clause), datetime casting</td>
+    </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Histogram_Users_Purchases/histogram_users_purchases_summary.html">Histogram of Users and Purchases</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Histogram_Users_Purchases">🔗</a></td>
+        <td>common table expression (CTE), RANK() window function</td>
     </tr>
 </table>
