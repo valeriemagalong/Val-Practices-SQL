@@ -21,7 +21,7 @@ Database: PostgreSQL
 
 WITH card_months_ranked AS (
   SELECT card_name, issued_amount,
-    RANK() OVER (
+    RANK() OVER(
     PARTITION BY card_name
     ORDER BY issue_year, issue_month) AS ranked_date
   FROM monthly_cards_issued
