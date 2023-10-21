@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Active User Retention</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Active User Retention</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/user-retention">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Assume you're given a table containing information on Facebook user actions. Write a query to obtain number of monthly active users (MAUs) in July 2022, including the month in numerical format "1, 2, 3".</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Parse out numerical month from the event date, then
+filter by rows with an event month of 6 (June) and 7 (July). Use
+the LAG() window function to create a column accessing the previous
+event month for each user, and wrap this result query in a CTE.
+Count the unique users in the CTE that have a row where the current
+event month is July (7), and the previous event month is June (6).
+(There should only be one transition point for each user.)
+*/
+
+WITH months_lag AS (
+  SELECT user_id,
+    EXTRACT(MONTH FROM event_date) AS current_month,
+    LAG(EXTRACT(MONTH FROM event_date), 1) OVER (
+      PARTITION BY user_id
+      ORDER BY EXTRACT(MONTH FROM event_date)
+    ) AS previous_month
+  FROM user_actions
+  WHERE EXTRACT(MONTH FROM event_date) IN (6, 7)
+)
+SELECT current_month,
+  COUNT(DISTINCT user_id) AS monthly_active_users
+FROM months_lag
+WHERE current_month = 7 and previous_month = 6
+GROUP BY current_month;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
