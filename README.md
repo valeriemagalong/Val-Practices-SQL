@@ -71,4 +71,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Card_Launch_Success">🔗</a></td>
         <td>common table expression (CTE), RANK() window function</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Active_User_Retention/active_user_retention_summary.html">Active User Retention</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Active_User_Retention">🔗</a></td>
+        <td>common table expression (CTE), LAG() window function to compare current row to previous row, EXTRACT() from datetime</td>
+    </tr>
 </table>
