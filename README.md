@@ -66,4 +66,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Compressed_Mode">🔗</a></td>
         <td>subquery in WHERE clause (filtering by MAX())</td>
     </tr>
+    <tr>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Card_Launch_Success/card_launch_success_summary.html">Card Launch Success</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Card_Launch_Success">🔗</a></td>
+        <td>common table expression (CTE), RANK() window function</td>
+    </tr>
 </table>
