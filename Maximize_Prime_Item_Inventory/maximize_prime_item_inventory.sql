@@ -46,5 +46,4 @@ UNION
 
 SELECT item_type, total_can_be_stored
 FROM prime_space
-ORDER BY total_can_be_stored DESC
-
+ORDER BY total_can_be_stored DESC;
