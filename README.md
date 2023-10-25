@@ -76,4 +76,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Active_User_Retention">🔗</a></td>
         <td>common table expression (CTE), LAG() window function to compare current row to previous row, EXTRACT() from datetime</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Y_On_Y_Growth_Rate/y_on_y_growth_rate_summary.html">Y-On-Y Growth Rate</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Y_On_Y_Growth_Rate">🔗</a></td>
+        <td>common table expression (CTE), LAG() window function, year-over-year growth rate calculation</td>
+    </tr>
 </table>
