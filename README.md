@@ -81,4 +81,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Y_On_Y_Growth_Rate">🔗</a></td>
         <td>common table expression (CTE), LAG() window function, year-over-year growth rate calculation</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Maximize_Prime_Item_Inventory/maximize_prime_item_inventory_summary.html">Maximize Prime Item Inventory</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Maximize_Prime_Item_Inventory">🔗</a></td>
+        <td>multiple CTEs, FLOOR() for discrete quantities, subquery, UNION for combining result sets</td>
+    </tr>
 </table>
