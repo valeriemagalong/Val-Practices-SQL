@@ -29,4 +29,4 @@ SELECT *,
   ROUND(
     ((curr_year_spend - prev_year_spend) / prev_year_spend) * 100,
     2) AS yoy_rate
-FROM spend_by_year
+FROM spend_by_year;
