@@ -86,4 +86,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Maximize_Prime_Item_Inventory">🔗</a></td>
         <td>multiple CTEs, FLOOR() for discrete quantities, subquery, UNION for combining result sets</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Median_Google_Search_Frequency/median_google_search_frequency_summary.html">Median Google Search Frequency</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Median_Google_Search_Frequency">🔗</a></td>
+        <td>common table expression (CTE), GENERATE_SERIES() to derive column of integers, PERCENTILE_CONT(0.5) to find precise median (interpolated)</td>
+    </tr>
 </table>
