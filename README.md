@@ -91,4 +91,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Median_Google_Search_Frequency">🔗</a></td>
         <td>common table expression (CTE), GENERATE_SERIES() to derive column of integers, PERCENTILE_CONT(0.5) to find precise median (interpolated)</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Advertiser_Status/advertiser_status_summary.html">Advertiser Status</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Advertiser_Status">🔗</a></td>
+        <td>COALESCE() to create column after handling NULLs, CASE statement to create column from conditional logic, full outer join </td>
+    </tr>
 </table>
