@@ -50,7 +50,8 @@ status of NEW or EXISTING, then the new status is EXISTING.
 SELECT COALESCE(a.user_id, dp.user_id) AS user_id,
   CASE
     WHEN paid IS NULL THEN 'CHURN'
-    -- If a value makes it past this line, then there was a payment made
+    /* If a value makes it past this line,
+    then there was a payment made */
     WHEN status IS NULL THEN 'NEW'
     WHEN status = 'CHURN' THEN 'RESURRECT'
     ELSE 'EXISTING'
