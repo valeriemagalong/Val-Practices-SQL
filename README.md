@@ -24,7 +24,7 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Sending_Opening_Snaps/sending_opening_snaps_summary.html">Sending vs. Opening Snaps</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Sending_Opening_Snaps">🔗</a></td>
-        <td>inner join, conditional aggregation (CASE statement), multiple CTEs</td>
+        <td>INNER JOIN, conditional aggregation (CASE statement), multiple CTEs</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Tweets_Rolling_Averages/tweets_rolling_averages_summary.html">Tweets' Rolling Averages</a></td>
@@ -39,17 +39,17 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Top_5_Artists/top_5_artists_summary.html">Top 5 Artists</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Top_5_Artists">🔗</a></td>
-        <td>inner joins, filtering values within a range (BETWEEN operator), DENSE_RANK() window function, CTEs</td>
+        <td>multiple INNER JOINs, filtering values within a range (BETWEEN operator), DENSE_RANK() window function, CTEs</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Signup_Activation_Rate/signup_activation_rate_summary.html">Signup Activation Rate</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Signup_Activation_Rate">🔗</a></td>
-        <td>multiple CTEs, left join with conditional filtering, ROUND() with casting</td>
+        <td>multiple CTEs, LEFT JOIN with conditional filtering, ROUND() with casting</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Supercloud_Customer/supercloud_customer_summary.html">Supercloud Customer</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Supercloud_Customer">🔗</a></td>
-        <td>inner join, query number of unique values (COUNT(DISTINCT)), CTEs, subqueries</td>
+        <td>INNER JOIN, query number of unique values (COUNT(DISTINCT)), CTEs, subqueries</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Odd_Even_Measurements/odd_even_measurements_summary.html">Odd and Even Measurements</a></td>
@@ -94,6 +94,11 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Advertiser_Status/advertiser_status_summary.html">Advertiser Status</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Advertiser_Status">🔗</a></td>
-        <td>COALESCE() to create column after handling NULLs, CASE statement to create column from conditional logic, full outer join </td>
+        <td>COALESCE() to create column after handling NULLs, CASE statement to create column from conditional logic, FULL OUTER JOIN</td>
+    </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/3-Topping-Pizzas/3_topping_pizzas_summary.html">3-Topping Pizzas</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/3-Topping-Pizzas">🔗</a></td>
+        <td>CONCAT() strings, CROSS JOIN to get all possible row combinations from multiple tables, comparison operators with strings</td>
     </tr>
 </table>
