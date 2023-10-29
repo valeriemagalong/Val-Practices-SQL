@@ -97,8 +97,8 @@ The challenges below chronicle my ongoing SQL practice:
         <td>COALESCE() to create column after handling NULLs, CASE statement to create column from conditional logic, FULL OUTER JOIN</td>
     </tr>
     <tr>
-        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/3-Topping-Pizzas/3_topping_pizzas_summary.html">3-Topping Pizzas</a></td>
-        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/3-Topping-Pizzas">🔗</a></td>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/3-Topping_Pizzas/3_topping_pizzas_summary.html">3-Topping Pizzas</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/3-Topping_Pizzas">🔗</a></td>
         <td>CONCAT() strings, CROSS JOIN to get all possible row combinations from multiple tables, comparison operators with strings</td>
     </tr>
 </table>
