@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>International Call Percentage</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>International Call Percentage</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://datalemur.com/questions/international-call-percentage">DataLemur.com</a>.
+                        <br>Database: PostgreSQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">A phone call is considered an international call when the person calling is in a different country than the person receiving the call.</p>
+                    <p class="text-secondary">What percentage of phone calls are international? Round the result to 1 decimal.</p>
+                    <p class="text-secondary">Assumption: The caller_id in phone_info table refers to both the caller and receiver.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Join the phone_calls table with the phone_info table
+twice, in order to get a column for the caller's country and the
+receiver's country in the same table.  Count the total number of
+calls, and use conditional aggregation to count the total calls
+where the caller's country is different from the receiver's country.
+Wrap this result table in a CTE, then derive the percent of
+international phone calls.
+*/
+
+WITH call_summary AS (
+  SELECT COUNT(*) AS total_calls,
+    COUNT(*) FILTER (WHERE i1.country_id != i2.country_id) AS total_int_calls
+  FROM phone_calls c
+  JOIN phone_info i1 on c.caller_id = i1.caller_id
+  JOIN phone_info i2 on c.receiver_id = i2.caller_id
+)
+SELECT ROUND(100.0 * total_int_calls / total_calls, 1)
+FROM call_summary;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
