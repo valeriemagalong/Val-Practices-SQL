@@ -112,7 +112,7 @@ The challenges below chronicle my ongoing SQL practice:
         <td>common table expression (CTE), conditional aggregation (FILTER clause), multiple INNER JOINs</td>
     </tr>
     <tr>
-        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Monthly_Percentage_Difference/monthly_percentage_difference_summary.html">Monthly Percentage Difference</a></td>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Monthly_Percentage_Difference/monthly_percentage_difference_summary.html">Monthly Percentage Difference</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Monthly_Percentage_Difference">🔗</a></td>
         <td>common table expression (CTE), DATE_FORMAT() to format any combination of date parts, LAG() window function</td>
     </tr>
