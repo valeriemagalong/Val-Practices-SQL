@@ -116,4 +116,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Monthly_Percentage_Difference">🔗</a></td>
         <td>common table expression (CTE), DATE_FORMAT() to format any combination of date parts, LAG() window function</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Top_Percentile_Fraud/top_percentile_fraud_summary.html">Top Percentile Fraud</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Top_Percentile_Fraud">🔗</a></td>
+        <td>common table expression (CTE), PERCENT_RANK() window function</td>
+    </tr>
 </table>
