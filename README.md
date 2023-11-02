@@ -121,4 +121,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Top_Percentile_Fraud">🔗</a></td>
         <td>common table expression (CTE), PERCENT_RANK() window function</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Premium_Vs_Freemium/premium_vs_freemium_summary.html">Premium vs. Freemium</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Premium_Vs_Freemium">🔗</a></td>
+        <td>multiple conditional aggregations (using two methods: IF statements, CASE statements), multiple INNER JOINs, HAVING clause</td>
+    </tr>
 </table>
