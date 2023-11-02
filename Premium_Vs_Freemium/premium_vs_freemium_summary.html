@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Premium vs. Freemium</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Premium vs. Freemium</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://platform.stratascratch.com/coding/10300-premium-vs-freemium">StrataScratch.com</a>.
+                        <br>Database: MySQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Find the total number of downloads for paying and non-paying users by date. Include only records where non-paying customers have more downloads than paying customers. The output should be sorted by earliest date first and contain 3 columns date, non-paying downloads, paying downloads.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Join the ms_download_facts table with the
+ms_user_dimension table and the ms_acc_dimension table. Group by
+date, and use conditional aggregation twice to derive a column for
+the total downloads by paying customers, and a column for total
+downloads by non-paying customers. Filter the records where there
+are more downloads by non-paying customers than paying customers.
+*/
+
+SELECT df.date,
+    SUM(IF(ad.paying_customer = 'yes', df.downloads, 0)) AS paying_downloads,
+    SUM(IF(ad.paying_customer = 'no', df.downloads, 0)) AS nonpaying_downloads
+FROM ms_download_facts df
+JOIN ms_user_dimension ud ON ud.user_id = df.user_id
+JOIN ms_acc_dimension ad ON ud.acc_id = ad.acc_id
+GROUP BY df.date
+HAVING nonpaying_downloads > paying_downloads
+ORDER BY df.date;
+
+/*
+An alternative (but lengthier) solution using a CTE and CASE statements:
+*/
+
+WITH downloads_summary AS (
+    SELECT df.date,
+        CASE WHEN ad.paying_customer = 'yes' THEN downloads END AS paying_downloads,
+        CASE WHEN ad.paying_customer = 'no' THEN downloads END AS nonpaying_downloads
+    FROM ms_download_facts df
+    JOIN ms_user_dimension ud ON ud.user_id = df.user_id
+    JOIN ms_acc_dimension ad ON ud.acc_id = ad.acc_id
+)
+SELECT date,
+    SUM(paying_downloads) AS total_paying_downloads,
+    SUM(nonpaying_downloads) AS total_nonpaying_downloads
+FROM downloads_summary
+GROUP BY date
+HAVING SUM(nonpaying_downloads) > SUM(paying_downloads)
+ORDER BY date;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
