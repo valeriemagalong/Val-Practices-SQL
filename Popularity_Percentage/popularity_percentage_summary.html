@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Popularity Percentage</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Popularity Percentage</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://platform.stratascratch.com/coding/10284-popularity-percentage">StrataScratch.com</a>.
+                        <br>Database: MySQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Find the popularity percentage for each user on Meta/Facebook. The popularity percentage is defined as the total number of friends the user has divided by the total number of users on the platform, then converted into a percentage by multiplying by 100.</p>
+                    <p class="text-secondary">Output each user along with their popularity percentage. Order records in ascending order by user id.</p>
+                    <p class="text-secondary">The 'user1' and 'user2' column are pairs of friends.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Since each row in the facebook_friends table represents
+a pair of two users that are friends, it could be the case that a
+user in the first column never appears in the second column (and vice-
+versa). In order to account for all appearances of a given user in
+both columns, derive a single column result set where all values in
+the second column are vertically appended to the first column (using
+the UNION ALL operator). Wrap this result set in a CTE, then group
+by user, deriving their percentage popularity by dividing the count
+of their rows in the CTE (i.e. their total friends) by the total
+number of users. Assuming that there are no user numbers skipped
+(meaning the user number is sequential, like a primary key), the
+total number of users can be found by getting the MAX user number.
+*/
+
+WITH friendship_list AS (
+    SELECT user1 AS user_id
+    FROM facebook_friends
+    UNION ALL
+    SELECT user2
+    FROM facebook_friends
+)
+SELECT user_id,
+    COUNT(*) / (MAX(user_id) OVER()) * 100 AS percent_popularity
+FROM friendship_list
+GROUP BY user_id
+ORDER BY user_id;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
