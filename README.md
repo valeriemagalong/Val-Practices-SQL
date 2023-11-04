@@ -131,4 +131,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Popularity_Percentage">🔗</a></td>
         <td>common table expression (CTE), UNION ALL for combining result sets (duplicates are preserved)</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/5-Star_Businesses/5_star_businesses_summary.html">Top 5 States With 5-Star Businesses</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/5-Star_Businesses">🔗</a></td>
+        <td>common table expression (CTE), RANK() window function</td>
+    </tr>
 </table>
