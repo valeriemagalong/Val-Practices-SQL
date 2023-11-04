@@ -84,7 +84,7 @@ The challenges below chronicle my ongoing SQL practice:
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Maximize_Prime_Item_Inventory/maximize_prime_item_inventory_summary.html">Maximize Prime Item Inventory</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Maximize_Prime_Item_Inventory">🔗</a></td>
-        <td>multiple CTEs, FLOOR() for discrete quantities, subquery, UNION for combining result sets</td>
+        <td>multiple CTEs, FLOOR() for discrete quantities, subquery, UNION for combining result sets (removing duplicates)</td>
     </tr>
     <tr>
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Median_Google_Search_Frequency/median_google_search_frequency_summary.html">Median Google Search Frequency</a></td>
@@ -125,5 +125,10 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Premium_Vs_Freemium/premium_vs_freemium_summary.html">Premium vs. Freemium</a></td>
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Premium_Vs_Freemium">🔗</a></td>
         <td>multiple conditional aggregations (using two methods: IF statements, CASE statements), multiple INNER JOINs, HAVING clause</td>
+    </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Popularity_Percentage/popularity_percentage_summary.html">Popularity Percentage</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Popularity_Percentage">🔗</a></td>
+        <td>common table expression (CTE), UNION ALL for combining result sets (duplicates are preserved)</td>
     </tr>
 </table>
