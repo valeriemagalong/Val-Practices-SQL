@@ -136,4 +136,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/5-Star_Businesses">🔗</a></td>
         <td>common table expression (CTE), RANK() window function</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Counting_Instances_In_Text/counting_instances_in_text_summary.html">Counting Instances In Text</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Counting_Instances_In_Text">🔗</a></td>
+        <td>common table expression (CTE), LIKE operator, % wildcard, UNION operator</td>
+    </tr>
 </table>
