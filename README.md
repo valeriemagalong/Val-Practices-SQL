@@ -141,4 +141,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Counting_Instances_In_Text">🔗</a></td>
         <td>common table expression (CTE), LIKE operator, % wildcard, UNION operator</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Workers_With_The_Highest_Salaries/workers_with_the_highest_salaries_summary.html">Workers with the Highest Salaries</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Workers_With_The_Highest_Salaries">🔗</a></td>
+        <td>INNER JOIN, subquery in WHERE clause (filtering by MAX())</td>
+    </tr>
 </table>
