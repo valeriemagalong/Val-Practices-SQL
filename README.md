@@ -156,4 +156,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Activity_Rank">🔗</a></td>
         <td>ROW_NUMBER() window function, window function over an aggregated window</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Finding_User_Purchases/finding_user_purchases_summary.html">Finding User Purchases</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Finding_User_Purchases">🔗</a></td>
+        <td>common table expression (CTE), LAG() window function, DATEDIFF() function for days difference between two dates</td>
+    </tr>
 </table>
