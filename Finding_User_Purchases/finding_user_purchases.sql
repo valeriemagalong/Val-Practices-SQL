@@ -17,8 +17,8 @@ Database: MySQL
 WITH purchases_summary AS (
     SELECT user_id,
         DATEDIFF(created_at,
-            LAG(created_at) OVER (PARTITION BY user_id ORDER BY created_at))
-            AS days_difference
+            LAG(created_at) OVER (PARTITION BY user_id ORDER BY created_at)
+            ) AS days_difference
     FROM amazon_transactions
 )
 SELECT DISTINCT user_id
