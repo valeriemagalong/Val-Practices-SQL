@@ -146,4 +146,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Workers_With_The_Highest_Salaries">🔗</a></td>
         <td>INNER JOIN, subquery in WHERE clause (filtering by MAX())</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Users_By_Average_Session_Time/users_by_average_session_time_summary.html">Users By Average Session Time</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Users_By_Average_Session_Time">🔗</a></td>
+        <td>common table expression (CTE), finding MIN and MAX from conditional aggregation (IF statements), TIMESTAMPDIFF() function, HAVING clause</td>
+    </tr>
 </table>
