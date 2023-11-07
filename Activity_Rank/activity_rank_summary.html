@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Activity Rank</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Activity Rank</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://platform.stratascratch.com/coding/10351-activity-rank">StrataScratch.com</a>.
+                        <br>Database: MySQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Find the email activity rank for each user. Email activity rank is defined by the total number of emails sent. The user with the highest number of emails sent will have a rank of 1, and so on. Output the user, total emails, and their activity rank. Order records by the total emails in descending order. Sort users with the same number of emails in alphabetical order.</p>
+                    <p class="text-secondary">In your rankings, return a unique value (i.e., a unique rank) even if multiple users have the same number of emails. For tie breaker use alphabetical order of the user usernames.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Since the question asks for a table of users ranked by
+the most emails sent, with a unique rank number even in case of ties
+(where alphabetical user name determines the rank number), the
+ROW_NUMBER() window function should be used over the result set of
+total count of emails per user.
+*/
+
+SELECT from_user, COUNT(id) AS total_emails,
+    ROW_NUMBER() OVER(ORDER BY COUNT(id) DESC, from_user) AS activity_rank
+FROM google_gmail_emails
+GROUP BY from_user;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
