@@ -151,4 +151,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Users_By_Average_Session_Time">🔗</a></td>
         <td>common table expression (CTE), finding MIN and MAX from conditional aggregation (IF statements), TIMESTAMPDIFF() function, HAVING clause</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Activity_Rank/activity_rank_summary.html">Activity Rank</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Activity_Rank">🔗</a></td>
+        <td>ROW_NUMBER() window function, window function over an aggregated window</td>
+    </tr>
 </table>
