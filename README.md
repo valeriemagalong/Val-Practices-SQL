@@ -161,4 +161,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Finding_User_Purchases">🔗</a></td>
         <td>common table expression (CTE), LAG() window function, DATEDIFF() function for days difference between two dates</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/New_Products/new_products_summary.html">New Products</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/New_Products">🔗</a></td>
+        <td>multiple conditional aggregations using IF statements</td>
+    </tr>
 </table>
