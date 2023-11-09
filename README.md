@@ -166,4 +166,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/New_Products">🔗</a></td>
         <td>multiple conditional aggregations using IF statements</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Risky_Projects/risky_projects_summary.html">Risky Projects</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Risky_Projects">🔗</a></td>
+        <td>common table expression (CTE), DATEDIFF() function, CEILING() function, multiple INNER JOINs</td>
+    </tr>
 </table>
