@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Acceptance Rate By Date</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Acceptance Rate By Date</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://platform.stratascratch.com/coding/10285-acceptance-rate-by-date">StrataScratch.com</a>.
+                        <br>Database: MySQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">What is the overall friend acceptance rate by date? Your output should have the rate of acceptances by the date the request was sent. Order by the earliest date to latest.</p>
+                    <p class="text-secondary">Assume that each friend request starts by a user sending (i.e., user_id_sender) a friend request to another user (i.e., user_id_receiver) that's logged in the table with action = 'sent'. If the request is accepted, the table logs action = 'accepted'. If the request is not accepted, no record of action = 'accepted' is logged.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Since each row in the the fb_friend_requests table
+represents an action related to a friend request (i.e. sent or accepted),
+and each friend request that was sent may or may not have been accepted,
+a result set must be generated where each row represents one friend
+request sent. To achieve this, group by sender and receiver (i.e. the
+unique friend request "pair"), and derive columns for: the sent date
+(i.e. row with the earliest date), the update date (i.e. row with the
+latest date; if the request was NOT accepted, then the update date will
+be the same as the sent date), and whether or not the request was accepted
+(i.e. 1 means yes, 0 means no). Wrap this result set in a CTE. To find
+friend acceptance rate by date from this CTE, group by sent date, then
+divide the total acceptances on that date by the total requests sent on
+that date.
+*/
+
+WITH requests_itemized AS (
+    SELECT MIN(date) AS sent_date, MAX(date) AS updated_date,
+        user_id_sender, user_id_receiver,
+        SUM(IF(action = 'accepted', 1, 0)) AS was_accepted
+    FROM fb_friend_requests
+    GROUP BY user_id_sender, user_id_receiver
+)
+SELECT sent_date,
+    SUM(was_accepted) / COUNT(*) AS acceptance_rate
+FROM requests_itemized
+GROUP BY sent_date
+ORDER BY sent_date;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
