@@ -171,4 +171,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Risky_Projects">🔗</a></td>
         <td>common table expression (CTE), DATEDIFF() function, CEILING() function, multiple INNER JOINs</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Acceptance_Rate_By_Date/acceptance_rate_by_date_summary.html">Acceptance Rate By Date</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Acceptance_Rate_By_Date">🔗</a></td>
+        <td>common table expression (CTE), get earliest and latest date with MIN() & MAX(), conditional aggregation (IF statement)</td>
+    </tr>
 </table>
