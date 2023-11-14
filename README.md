@@ -176,4 +176,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Acceptance_Rate_By_Date">🔗</a></td>
         <td>common table expression (CTE), get earliest and latest date with MIN() & MAX(), conditional aggregation (IF statement)</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Ranking_Most_Active_Guests/ranking_most_active_guests_summary.html">Ranking Most Active Guests</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Ranking_Most_Active_Guests">🔗</a></td>
+        <td>DENSE_RANK() window function over an ordered, aggregated measure</td>
+    </tr>
 </table>
