@@ -181,4 +181,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Ranking_Most_Active_Guests">🔗</a></td>
         <td>DENSE_RANK() window function over an ordered, aggregated measure</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Apple_Product_Counts/apple_product_counts_summary.html">Apple Product Counts</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Apple_Product_Counts">🔗</a></td>
+        <td>conditional aggregation (using two methods: IF statement, CASE statement), COUNT(DISTINCT), INNER JOIN</td>
+    </tr>
 </table>
