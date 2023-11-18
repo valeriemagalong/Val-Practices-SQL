@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Spam Posts</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Spam Posts</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://platform.stratascratch.com/coding/10134-spam-posts">StrataScratch.com</a>.
+                        <br>Database: MySQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Calculate the percentage of spam posts in all viewed posts by day. A post is considered a spam if a string "spam" is inside keywords of the post. Note that the facebook_posts table stores all posts posted by users. The facebook_post_views table is an action table denoting if a user has viewed a post.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: To isolate only the posts that are viewed, left join
+the facebook_post_views table with the facebook_posts table, then
+wrap this result set in a CTE. Using this CTE, get two aggregates:
+the total number of posts (i.e. the count of all the rows), and the
+total number of spam posts (i.e. the total number of rows within
+"spam" included in the post keywords). Derive the percentage of spam
+posts from these two aggregates.
+*/
+
+WITH viewed_posts AS (
+    SELECT p.post_date, v.post_id, p.post_keywords
+    FROM facebook_post_views v
+    LEFT JOIN facebook_posts p ON v.post_id = p.post_id
+)
+SELECT
+    post_date,
+    100 * (
+        SUM(IF(post_keywords LIKE '%spam%', 1, 0)) / COUNT(*)
+    ) AS percent_spam_posts
+FROM viewed_posts
+GROUP BY post_date;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
