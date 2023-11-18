@@ -186,4 +186,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Apple_Product_Counts">🔗</a></td>
         <td>conditional aggregation (using two methods: IF statement, CASE statement), COUNT(DISTINCT), INNER JOIN</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Spam_Posts/spam_posts_summary.html">Spam Posts</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Spam_Posts">🔗</a></td>
+        <td>common table expression (CTE), conditional aggregation (IF statement)</td>
+    </tr>
 </table>
