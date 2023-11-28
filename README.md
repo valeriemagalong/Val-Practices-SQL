@@ -191,4 +191,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Spam_Posts">🔗</a></td>
         <td>common table expression (CTE), conditional aggregation (IF statement)</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Percentage_Shippable_Orders/percentage_shippable_orders_summary.html">Percentage Shippable Orders</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Percentage_Shippable_Orders">🔗</a></td>
+        <td>LEFT JOIN, conditional aggregation (IF statement), COUNT(*) vs. COUNT(column) for including/excluding NULLs</td>
+    </tr>
 </table>
