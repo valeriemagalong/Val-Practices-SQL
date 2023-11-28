@@ -46,9 +46,9 @@ understanding of the COUNT function:
 */
 
 SELECT 100 * (
-    -- Must understand that COUNT(*) counts all rows in the result
-    -- set, while COUNT(column) counts only the non-null values
-    -- (i.e. NULL rows are not counted)
+    /* Must understand that COUNT(*) counts all rows in the result
+    set, while COUNT(column) counts only the non-null values
+    (i.e. NULL rows are not counted) */
     COUNT(c.address) / COUNT(*)
     ) AS percent_shippable
 FROM orders o
