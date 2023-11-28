@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Percentage Shippable Orders</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Percentage Shippable Orders</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://platform.stratascratch.com/coding/10090-find-the-percentage-of-shipable-orders">StrataScratch.com</a>.
+                        <br>Database: MySQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Find the percentage of shippable orders.  Consider an order shippable if the customer's address is known.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Since each row in the orders table represents a single
+order, left join the orders table with the customers table. Use
+conditional aggregation to get the total number of rows with a valid
+address (i.e. no NULL in the address column), then divide this by
+the total number of rows in the result set to get the proportion of
+shippable orders.
+*/
+
+SELECT 100 * (
+    SUM(IF(c.address IS NOT NULL, 1, 0)) / COUNT(*)
+    ) AS percent_shippable
+FROM orders o
+LEFT JOIN customers c ON o.cust_id = c.id;
+
+/*
+An alternative (but less intuitive) solution that requires an
+understanding of the COUNT function:
+*/
+
+SELECT 100 * (
+    -- Must understand that COUNT(*) counts all rows in the result
+    -- set, while COUNT(column) counts only the non-null values
+    -- (i.e. NULL rows are not counted)
+    COUNT(c.address) / COUNT(*)
+    ) AS percent_shippable
+FROM orders o
+LEFT JOIN customers c ON o.cust_id = c.id;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
