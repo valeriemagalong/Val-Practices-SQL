@@ -196,4 +196,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Percentage_Shippable_Orders">🔗</a></td>
         <td>LEFT JOIN, conditional aggregation (IF statement), COUNT(*) vs. COUNT(column) for including/excluding NULLs</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Matching_Hosts_And_Guests/matching_hosts_and_guests_summary.html">Matching Hosts and Guests</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Matching_Hosts_And_Guests">🔗</a></td>
+        <td>CROSS JOIN with WHERE clause to combine records from multiple tables under specific conditions, INNER JOIN based on two common columns</td>
+    </tr>
 </table>
