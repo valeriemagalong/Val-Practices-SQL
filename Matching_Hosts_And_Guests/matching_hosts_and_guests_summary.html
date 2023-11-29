@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link rel="stylesheet" href="../desert.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <title>Matching Hosts and Guests</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-12 text-center mt-4">
+                    <h1>Matching Hosts and Guests</h1>
+                    <p class="text-secondary">Question sourced from <a href="https://platform.stratascratch.com/coding/10078-find-matching-hosts-and-guests-in-a-way-that-they-are-both-of-the-same-gender-and-nationality">StrataScratch.com</a>.
+                        <br>Database: MySQL
+                    </p>
+                </div>
+                <div class="col-lg-5 my-4">
+                    <h4>Question</h4>
+                    <p class="text-secondary">Find matching hosts and guests pairs in a way that they are both of the same gender and nationality.  Output the host id and the guest id of matched pair.</p>
+                    <img src="tables.png" class="img-fluid" alt="Database table examples" width="auto">
+                </div>
+                <div class="col-lg-7 my-4">
+                    <h4>Solution</h4>
+                    <pre class="prettyprint rounded shadow" style="padding: 30px;">
+
+/*
+My strategy: Use a cross join to create a result set of all possible
+row combinations of the airbnb_hosts and airbnb_guests table,
+filtering by the rows where there is a match in gender and nationality
+between the host and guest.  Since there are repeated hosts and guests
+in each table, select only the distinct host/guest pairs with matching
+gender and nationality.
+*/
+
+SELECT DISTINCT h.host_id, g.guest_id
+FROM airbnb_hosts h
+CROSS JOIN airbnb_guests g
+WHERE h.gender = g.gender
+    AND h.nationality = g.nationality;
+
+/*
+Alternative solution using an inner join on two matching columns:
+*/
+
+SELECT DISTINCT h.host_id, g.guest_id
+FROM airbnb_hosts h
+JOIN airbnb_guests g ON h.gender = g.gender
+    AND h.nationality = g.nationality;
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                var script = document.createElement("script");
+                script.src = "https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js";
+                document.body.appendChild(script);
+            });
+        </script>
+    </body>
+</html>
