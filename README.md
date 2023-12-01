@@ -211,4 +211,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Host_Popularity_Rental_Prices">🔗</a></td>
         <td>common table expression (CTE), CONCAT() multiple columns, CASE statement to create column from conditional logic</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Cookbook_Recipes/cookbook_recipes_postgresql_summary.html">Cookbook Recipes (PostgreSQL solution)</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Cookbook_Recipes">🔗</a></td>
+        <td>common table expression (CTE), GENERATE_SERIES() to create series of even and odd numbers, multiple LEFT JOINs</td>
+    </tr>
 </table>
