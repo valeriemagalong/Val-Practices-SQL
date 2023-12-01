@@ -206,4 +206,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/City_With_Most_Amenities">🔗</a></td>
         <td>common table expression (CTE), LENGTH() function, REPLACE() function, subquery in WHERE clause (filtering by MAX())</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Host_Popularity_Rental_Prices/host_popularity_rental_prices_summary.html">Host Popularity Rental Prices</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Host_Popularity_Rental_Prices">🔗</a></td>
+        <td>common table expression (CTE), CONCAT() multiple columns, CASE statement to create column from conditional logic</td>
+    </tr>
 </table>
