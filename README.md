@@ -216,4 +216,9 @@ The challenges below chronicle my ongoing SQL practice:
         <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Cookbook_Recipes">🔗</a></td>
         <td>common table expression (CTE), GENERATE_SERIES() to create series of even and odd numbers, multiple LEFT JOINs</td>
     </tr>
+    <tr>
+        <td><a href="https://htmlpreview.github.io/?https://github.com/valeriemagalong/Val-Practices-SQL/blob/main/Cookbook_Recipes/cookbook_recipes_mysql_summary.html">Cookbook Recipes (MySQL solution)</a></td>
+        <td><a href="https://github.com/valeriemagalong/Val-Practices-SQL/tree/main/Cookbook_Recipes">🔗</a></td>
+        <td>recursive common table expression (WITH RECURSIVE), subquery in WHERE clause (filtering by MAX()), multiple LEFT JOINs</td>
+    </tr>
 </table>
