@@ -2,7 +2,7 @@
 Question sourced from StrataScratch.com
 https://platform.stratascratch.com/coding/2089-cookbook-recipes
 
-Database: PostgreSQL
+Database: MySQL
 */
 
 -- You are given the table with titles of recipes from a cookbook and their page numbers. You are asked
