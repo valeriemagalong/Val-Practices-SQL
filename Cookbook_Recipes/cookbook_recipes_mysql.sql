@@ -31,7 +31,7 @@ Database: MySQL
 
 WITH RECURSIVE page_mapping AS (
     -- Initialize the first row of the CTE
-    SELECT 0 AS even_pages, 1 as odd_pages
+    SELECT 0 AS even_pages, 1 AS odd_pages
     UNION ALL
     -- Define recursive statement that produces additional rows of the CTE
     SELECT even_pages + 2, odd_pages + 2
